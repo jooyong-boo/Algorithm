@@ -1,7 +1,7 @@
-2const fs = require('fs');
-const input = fs.readFileSync('/dev/stdin').toString().split('\n');
+const fs = require("fs");
+const input = fs.readFileSync("/dev/stdin").toString().split("\n");
 
-const [a, b] = input
+const [a, b] = input;
 
 const C = a * 5;
 const D = a * 8;
