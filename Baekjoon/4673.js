@@ -23,6 +23,7 @@ function selfNumber(item) {
     }
     return result;
 }
+
 // 1. 길이가 10000이고 true로 채워진 배열 생성
 // 2. 해당 배열을 반복문을 실행하여 함수 selfNumber의 인자로 인덱스 값을 넣어서 실행
 // 3. item의 값이 10보다 작으면 앞에 0을 붙인다
