@@ -1,21 +1,30 @@
-const fs = require('fs');
-const input = fs.readFileSync('./stdin.txt').toString().split(" ");
+const fs = require("fs");
+const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
+let input = fs.readFileSync(filePath).toString().split("\n");
 
-const N = input[0];
-
-for(i = 1; i <= N; i++){
-    let alphabet = input[i].toString().trim();
-        alphabet.match(/(a-z)*/.g);
-        console.log(alphabet);
+let number = input[0];
+let word = [];
+for (let i = 1; i < input.length; i++) {
+    word.push(input[i]);
+}
+let result = 0;
+for (let i = 0; i < number; i++) {
+    let check = [];
+    for (let j = 0; j < word[i].length; j++) {
+        if (check.includes(word[i][j]) === false) {
+            check.push(word[i][j]);
+        } else {
+            if (word[i][j] === word[i][j - 1]) {
+                continue;
+            } else {
+                check = [];
+                break;
+            }
+        }
+    }
+    if (check.length > 0) {
+        result += 1;
+    }
 }
 
-
-
-
-// for(i = 1; i <= N; i++){
-//     let alphabet = input[i].toString().trim();
-//     for(j = 97; j < 123; j++){
-//         alphabet.match(/(a-z)*/.g);
-//     }
-// }
-// console.log(input);
+console.log(result);
