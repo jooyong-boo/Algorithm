@@ -18,8 +18,10 @@ const sortStudents = students.sort((a, b) => {
         // 모든 점수가 같으면 이름이 사전순으로 증가하는 순서로 (아스키코드여서 오름차순으로 정렬)
     } else {
         for (let i = 0; i < 10; i++) {
+            // 아스키코드로 변환한 숫자가 같으면 반복문 continue
             if (a[0].charCodeAt(i) === b[0].charCodeAt(i)) {
                 continue;
+                // 같지 않으면 오름차순으로 정렬
             } else {
                 return a[0].charCodeAt(i) - b[0].charCodeAt(i);
             }
@@ -27,6 +29,7 @@ const sortStudents = students.sort((a, b) => {
     }
 });
 
+// 이름만 출력해야하기에 map으로 이름만 name에 배열로 할당해준다.
 const name = sortStudents.map((student) => {
     return student[0];
 });
