@@ -4,6 +4,7 @@ let input = fs.readFileSync(filePath).toString().trim().split("\n");
 
 const N = input.shift();
 const students = input.map((item) => item.split(" "));
+let cell = new Array(50).fill(new Array(50));
 
 const sortStudents = students.sort((a, b) => {
     // 국어 점수가 같지 않으면 국어점수가 감소하는 순서로
@@ -28,7 +29,7 @@ const sortStudents = students.sort((a, b) => {
         }
     }
 });
-
+console.log(cell.length);
 // 이름만 출력해야하기에 map으로 이름만 name에 배열로 할당해준다.
 const name = sortStudents.map((student) => {
     return student[0];
