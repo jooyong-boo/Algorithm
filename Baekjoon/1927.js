@@ -7,22 +7,22 @@ let input = fs
     .split("\n")
     .map((item) => +item);
 
-const N = input.shift();
+const [N, ...value] = input;
 
 let result = [];
 let queue = [];
 
-for (let i = 0; i < N; i++) {
-    if (input[i] === 0) {
+for (let i = 0; i <= N; i++) {
+    if (value[i] === 0) {
         if (queue.length === 0) {
-            result.push("0");
+            result.push(0);
         } else {
-            result.push(`${queue[queue.length - 1]}`);
-            queue = queue.slice(0, queue.length - 1);
+            let index = queue.indexOf(Math.min(...queue));
+            result.push(...queue.splice(index, 1));
         }
     } else {
-        queue.push(input[i]);
-        queue.sort((a, b) => b - a);
+        queue.push(value[i]);
     }
 }
+
 console.log(result.join("\n"));
