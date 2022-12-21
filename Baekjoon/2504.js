@@ -60,4 +60,10 @@ for (let i = 0; i < input.length; i++) {
     }
 }
 
-console.log(stack.reduce((a, b) => a + b));
+let result = stack.reduce((a, b) => a + b);
+
+if (typeof result === "number") {
+    console.log(result);
+} else {
+    console.log(0);
+}
