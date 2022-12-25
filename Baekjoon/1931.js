@@ -22,9 +22,6 @@ for (let i = 1; i < N; i++) {
         result.push(value[i]);
         initEnd = end;
     }
-    // if (start >= initEnd && start === end) {
-    //     result.push(value[i]);
-    // }
 }
 
 console.log(result.length);
