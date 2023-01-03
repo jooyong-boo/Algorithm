@@ -46,7 +46,6 @@ for (let i = 0; i < space.length; i++) {
             copyMap[e][f] = 1;
 
             let count = 0;
-            // 바이러스 퍼트리면서 count 1씩 증가
 
             while (copyVirus.length) {
                 let [x, y] = copyVirus.shift();
@@ -70,7 +69,6 @@ for (let i = 0; i < space.length; i++) {
                 }
             }
             result.push(totalSpace - count);
-            // 다 퍼진 후 totalSpace에서 count 뺸걸 result에 push;
         }
     }
 }
