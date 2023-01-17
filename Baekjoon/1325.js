@@ -21,10 +21,8 @@ const DFS = (start) => {
     const stack = [start];
     const visited = Array.from({ length: N + 1 }, () => false);
     let count = 0;
-    let result = 0;
     while (stack.length) {
         let cur = stack.pop();
-        if (result < count) result = count;
         visited[cur] = true;
         for (let i = 0; i < graph[cur].length; i++) {
             let value = graph[cur][i];
@@ -34,11 +32,11 @@ const DFS = (start) => {
             stack.push(value);
         }
     }
-    if (max < result) {
-        max = result;
+    if (max < count) {
+        max = count;
         answer = [];
         answer.push(start);
-    } else if (max === result) {
+    } else if (max === count) {
         answer.push(start);
     }
 };
