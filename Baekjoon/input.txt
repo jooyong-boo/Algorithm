@@ -1,14 +1,11 @@
-13
-but
-i
-wont
-hesitate
-no
-more
-no
-more
-it
-cannot
-wait
-im
-yours
+10 4790
+1
+5
+10
+50
+100
+500
+1000
+5000
+10000
+50000
