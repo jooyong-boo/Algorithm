@@ -6,9 +6,8 @@ let input = fs
     .trim()
     .split("-")
     .map((item) => {
-        let newItem = item.split("+");
-        return newItem.reduce((a, b) => Number(a) + Number(b), 0);
+        let value = item.split("+");
+        return value.reduce((a, b) => Number(a) + Number(b));
     });
 
-console.log(input);
 console.log(input.reduce((a, b) => a - b));
