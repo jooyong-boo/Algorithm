@@ -5,7 +5,6 @@ let input = fs.readFileSync(filePath).toString().trim().split("\n");
 const A = Number(input[0]);
 let setA = input[1].split(" ").map((value) => +value);
 
-let result = [];
 let stack = [];
 for (let i = 0; i < A; i++) {
     let value = setA[i];
@@ -20,4 +19,4 @@ if (stack.length) {
     }
 }
 
-console.log(setA);
+console.log(setA.join(' '));
